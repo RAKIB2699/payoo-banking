@@ -10,13 +10,14 @@
 </head>
 
 <body class="bg-slate-800">
-    <section class="max-w-md min-h-screen pt-6 relative bg-gray-200 mx-auto">
-        <header class="mx-6">
-            <nav class="flex justify-between">
+    <section>
+        <section class="max-w-md min-h-screen pt-6 relative bg-gray-200 mx-auto">
+
+            <nav class="flex justify-between mx-6">
                 <div class="flex justify-center gap-2">
                     <img class="w-14" src="./assets/Group.png" alt="">
                     <div>
-                        <h1 class="font-bold">$45000</h1>
+                        <h1 class="font-bold">$<span id="mainBalance">45000</span></h1>
                         <h1>Available Balance</h1>
                     </div>
                 </div>
@@ -24,18 +25,19 @@
                     <button class="btn">Log out</button>
                 </div>
             </nav>
-        </header>
-        <main>
+
+
             <div class="px-6 py-3">
                 <h1 class="font-bold mt-6 text-2xl pb-2">🔥 Welcome to Payooo!</h1>
                 <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
             </div>
+            <!-- card  -->
             <div class="grid grid-cols-3 gap-1 px-4 py-5">
-                <div class="border rounded border-slate-400 p-3">
+                <div id="addmoney" class="border rounded border-slate-400 p-3">
                     <img class="mx-auto w-8" src="./assets/wallet1.png" alt="">
                     <p class="text-center">Add Money</p>
                 </div>
-                <div class="border rounded border-slate-400 p-3">
+                <div id="cashout" class="border rounded border-slate-400 p-3">
                     <img class="mx-auto w-8" src="./assets/money1.png" alt="">
                     <p class="text-center">Cash out</p>
                 </div>
@@ -56,53 +58,99 @@
                     <p class="text-center">Transaction</p>
                 </div>
             </div>
-        </main>
-      <footer>
-        <h2 class="ml-5">Add Money</h2>
-        <div class="hero">
-          
-            <div class="hero-content flex-col lg:flex-row-reverse w-11/12">
-              <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
-                <form class="card-body">
-                    <legend>Select Bank</legend>
-                    <select class="select select-bordered w-full max-w-xs">
-                        <option disabled selected>Select Bank</option>
-                        <option>Bkash</option>
-                        <option>Nagad</option>
-                        <option>Rocket</option>
-                      </select>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Bank Account Number</span>
-                    </label>
-                    <input type="number" placeholder="Bank Account" class="input input-bordered" required />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Add Amount</span>
-                    </label>
-                    <input type="number" placeholder="Add Amount" class="input input-bordered" required />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Pin</span>
-                    </label>
-                    <input type="pin" placeholder="Enter pin" class="input input-bordered" required />
-                    <label class="label">
-                      <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                    </label>
-                  </div>
-                  <div class="form-control mt-6">
-                    <button class="btn btn-primary">Add Money</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-      </footer>
+            <!-- addmoney -->
+            <section id="addmoneysection">
+                <h2 class="ml-5">Add Money</h2>
+
+
+                <div class="hero-content flex-col lg:flex-row-reverse w-11/12">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                            <legend>Select Bank</legend>
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Select Bank</option>
+                                <option>Bkash</option>
+                                <option>Nagad</option>
+                                <option>Rocket</option>
+                            </select>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Bank Account Number</span>
+                                </label>
+                                <input type="number" value="01645172699" placeholder="Bank Account"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Add Amount</span>
+                                </label>
+                                <input type="number" id="addamount" placeholder="Add Amount"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin</span>
+                                </label>
+                                <input type="pin" id="pin" value="1234" placeholder="Enter pin"
+                                    class="input input-bordered" required />
+                                <label class="label">
+                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="addmoneybtn" class="btn btn-primary">Add Money</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+            <!-- cashout -->
+            <section id="cashoutsection">
+                <h1 class="ml-5">Cash out</h1>
+                <div class="hero-content flex-col lg:flex-row-reverse w-11/12">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Agent Number</span>
+                                </label>
+                                <input type="number" value="01645172699" placeholder="Enter 11 Digit Agent Number"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Amount</span>
+                                </label>
+                                <input type="number" id="cashoutamount" placeholder="Enter Amount to withdraw"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin Number</span>
+                                </label>
+                                <input type="number" id="cashoutpin" value="1234" placeholder="Enter pin"
+                                    class="input input-bordered" required />
+                                <label class="label">
+                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="cashoutbtn" class="btn btn-primary">Withdraw Money</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
     </section>
 
-
+    <script src="./script/Addmoney.js"></script>
+    <script src="./script/toggle.js"></script>
+    <script src="./script/cashout.js"></script>
 </body>
 
 </html>
